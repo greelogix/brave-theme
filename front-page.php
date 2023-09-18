@@ -78,7 +78,7 @@ get_header();
                     </div>
                 </div>
                 <div class="col-span-1">
-                    <img src="<?php echo $mission_image; ?>" alt="Legion Jiu Jitsu" class="w-full h-full object-cover object-center rounded-lg shadow-lg">
+                    <img src="<?php echo $mission_image; ?>" alt="<?php echo get_field('mission_heading'); ?> Image" class="w-full h-full object-cover object-center rounded-lg shadow-lg">
                 </div>
             </div>
         </div>

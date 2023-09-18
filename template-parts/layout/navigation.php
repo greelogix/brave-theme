@@ -12,7 +12,7 @@ $top_bar_bg_color = get_theme_mod('top_bar_bg_color', '#000000');
 $top_bar_text_color = get_theme_mod('top_bar_text_color', '#ffffff');
 
 $phone_number = get_theme_mod('phone_number', '555-555-5555');
-$cta_button_text = get_field('cta_button_text', 'option');
+$cta_button_text = get_theme_mod('cta_button', 'Free Trial');
 
 $nav_height = get_theme_mod('nav_height');
 $nav_bg_color = get_theme_mod('nav_bg_color', '#ffffff');
@@ -26,13 +26,12 @@ $nav_text_hover_color = get_theme_mod('nav_text_hover_color', '#000000');
  *
  * @package brave
  */
-
 ?>
 
 <header id="masthead" class="<?php echo $transparent_nav ? 'absolute top inset-x-0 top-0' : ''; ?>">
     <?php if ($hide_top_bar == false) : ?>
         <div id="top-bar" class="relative z-10 <?php echo $transparent_nav ? '' : 'border-b' ?>" style="
-                background-color: <?php $transparent_nav ? "transparent" : $top_bar_bg_color; ?>;
+                background-color: <?php echo $transparent_nav ? "transparent" : $top_bar_bg_color; ?>;
                 color: <?php echo $top_bar_text_color; ?>
             ">
             <div class="container">
@@ -56,7 +55,7 @@ $nav_text_hover_color = get_theme_mod('nav_text_hover_color', '#000000');
         color: <?php echo $nav_text_color; ?>">
         <div class="container">
             <div class="relative flex items-center justify-between">
-                <div class="site-branding flex py-4" style="height: <?php echo $nav_height; ?>px;">
+                <div class="site-branding flex py-4" style="height: <?php echo $nav_height ? $nav_height : 90; ?>px;">
                     <a class="flex" href="<?php echo esc_url(home_url('/')); ?>">
                         <img src="<?php echo $transparent_nav ? esc_url($secondary_logo) : esc_url($logo); ?>'" alt="<?php echo get_bloginfo('name'); ?>" />
                     </a>

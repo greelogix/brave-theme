@@ -71,6 +71,7 @@ $css_classes .= $use_header_image ? 'has-header-image ' : '';
         }
 
         .text-primary,
+        .hover:text-primary:hover,
         i {
             color: <?php echo $primary_color; ?>;
         }
