@@ -122,6 +122,12 @@ if (!function_exists('brave_setup')) :
 endif;
 add_action('after_setup_theme', 'brave_setup');
 
+
+/**
+ * Register plugins
+ */
+require get_template_directory() . '/inc/plugins.php';
+
 /**
  * Register widget area.
  *
@@ -647,10 +653,6 @@ function disable_gutenberg_editor($use_block_editor)
     if ($post && $post->ID == get_option('page_on_front')) return false;
     return $use_block_editor;
 }
-
-
-// require the plugins/lead-capture.php file
-require get_template_directory() . '/plugins/lead-capture/index.php';
 
 
 // add a custom meta field name of free_trial in the attributes section of the program post type
