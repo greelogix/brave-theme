@@ -34,6 +34,6 @@
     </div>
 
     <div class="container text-center mb-4">
-        Made With Love by <a href="https://brave.io" target="_blank" class="text-primary">brave</a>
+        <p class="text-sm"><a href="https://braveforgyms.com" target="_blank" class="text-primary">Martial Arts Website Design by Brave For Gyms</a></p>
     </div>
 </footer><!-- #colophon -->
