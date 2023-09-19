@@ -4,6 +4,18 @@ add_action('acf/include_fields', function () {
         return;
     }
 
+    // add a theme options page
+    acf_add_options_page(array(
+        'page_title' => 'Call To Action',
+        'menu_title' => 'Call To Action',
+        'menu_slug' => 'call-to-action',
+        'capability' => 'edit_posts',
+        'redirect' => false,
+        'icon_url' => 'dashicons-megaphone',
+        // position
+        'position' => 8,
+    ));
+
     acf_add_local_field_group(array(
         'key' => 'group_64f63f8c12cf1',
         'title' => 'Call To Actions Options',
@@ -101,7 +113,7 @@ add_action('acf/include_fields', function () {
                 array(
                     'param' => 'options_page',
                     'operator' => '==',
-                    'value' => 'theme-options',
+                    'value' => 'call-to-action',
                 ),
             ),
         ),
@@ -910,5 +922,63 @@ add_action('acf/include_fields', function () {
         'description' => '',
         'show_in_rest' => 0,
         'modified' => 1695069559,
+    ));
+
+
+    acf_add_local_field_group(array(
+        'key' => 'group_6508f3a902075',
+        'title' => 'Social Sharing',
+        'fields' => array(
+            array(
+                'key' => 'field_6508f3a9c51cf',
+                'label' => 'Social Sharing Image',
+                'name' => 'social_sharing_image',
+                'aria-label' => '',
+                'type' => 'image',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'return_format' => 'id',
+                'library' => 'all',
+                'min_width' => '',
+                'min_height' => '',
+                'min_size' => '',
+                'max_width' => '',
+                'max_height' => '',
+                'max_size' => '',
+                'mime_types' => '',
+                'preview_size' => 'medium',
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'post',
+                ),
+            ),
+            array(
+                array(
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'page',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'side',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => true,
+        'description' => '',
+        'show_in_rest' => 0,
     ));
 });

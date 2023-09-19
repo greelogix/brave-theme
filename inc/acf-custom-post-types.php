@@ -91,4 +91,6 @@ add_action('init', function () {
         // position
         'menu_position' => 7,
     ));
+
+    // cta
 });
