@@ -156,6 +156,7 @@ function brave_add_home_page()
 
 add_action('after_switch_theme', 'brave_add_home_page');
 
+
 /**
  * Register plugins
  */

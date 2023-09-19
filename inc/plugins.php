@@ -21,5 +21,5 @@ if (!current_user_can('manage_options')) {
     // When including the PRO plugin, hide the ACF Updates menu
     add_filter('acf/settings/show_updates', '__return_false', 100);
 }
-
+include_once('acf-custom-post-types.php');
 include_once('acf-fields.php');
