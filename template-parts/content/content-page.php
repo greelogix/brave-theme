@@ -19,8 +19,6 @@
         </header><!-- .entry-header -->
     <?php endif; ?>
 
-    <?php brave_post_thumbnail(); ?>
-
     <div <?php brave_content_class($args['use_header_image'] ? 'pt-16' : ''); ?>>
         <?php
         the_content();
