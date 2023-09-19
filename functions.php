@@ -131,6 +131,9 @@ function brave_add_home_page()
     $existing_home_page = get_theme_mod('home_page_id');
 
     if ($existing_home_page) {
+        // set home page as front page
+        update_option('show_on_front', 'page');
+        update_option('page_on_front', $existing_home_page);
         return;
     }
 
