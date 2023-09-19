@@ -124,9 +124,41 @@ add_action('after_setup_theme', 'brave_setup');
 
 
 /**
+ * Add a home page
+ */
+function brave_add_home_page()
+{
+    $existing_home_page = get_theme_mod('home_page_id');
+
+    if ($existing_home_page) {
+        return;
+    }
+
+    $home_page = array(
+        'post_title' => 'Home',
+        'post_content' => '',
+        'post_status' => 'publish',
+        'post_type' => 'page'
+    );
+
+    $home_page_id = wp_insert_post($home_page);
+
+    // save page_id as a theme mod
+    set_theme_mod('home_page_id', $home_page_id);
+
+    echo 'Home page created! <br>' . $home_page_id;
+
+    // set home page as front page
+    update_option('show_on_front', 'page');
+    update_option('page_on_front', $home_page_id);
+}
+
+add_action('after_switch_theme', 'brave_add_home_page');
+
+/**
  * Register plugins
  */
-require get_template_directory() . '/inc/plugins.php';
+include_once get_template_directory() . '/inc/plugins.php';
 
 /**
  * Register widget area.

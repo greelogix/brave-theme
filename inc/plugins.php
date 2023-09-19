@@ -22,9 +22,4 @@ if (!current_user_can('manage_options')) {
     add_filter('acf/settings/show_updates', '__return_false', 100);
 }
 
-
-function my_acf_json_save_point($path)
-{
-    return get_stylesheet_directory() . '/inc/acf-json';
-}
-add_filter('acf/settings/save_json', 'my_acf_json_save_point');
+include_once('acf-fields.php');

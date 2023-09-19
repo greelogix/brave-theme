@@ -11,10 +11,10 @@ $transparent_nav = get_field('transparent_header');
 $primary_color = get_theme_mod('primary_color', '#000000');
 $nav_height = get_theme_mod('nav_height');
 $hero_bg_id = get_field('hero_image');
-$hero_bg = wp_get_attachment_image_src($hero_bg_id, 'full')[0];
+$hero_bg = $hero_bg_id ? wp_get_attachment_image_src($hero_bg_id, 'full')[0] : '';
 
 $mission_image_id = get_field('mission_image');
-$mission_image = wp_get_attachment_image_src($mission_image_id, 'full')[0];
+$mission_image = $mission_image_id ? wp_get_attachment_image_src($mission_image_id, 'full')[0] : '';
 get_header();
 ?>
 
