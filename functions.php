@@ -146,8 +146,6 @@ function brave_add_home_page()
     // save page_id as a theme mod
     set_theme_mod('home_page_id', $home_page_id);
 
-    echo 'Home page created! <br>' . $home_page_id;
-
     // set home page as front page
     update_option('show_on_front', 'page');
     update_option('page_on_front', $home_page_id);
